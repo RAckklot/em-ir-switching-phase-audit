@@ -1,0 +1,2 @@
+{"schema":"vyges-events/1.0","ts_ms":1795263329844,"tool":"vyges-em-ir","severity":"warn","code":"IR-DROP","raw_msg":"dynamic droop 0.0509 V (2.83%) at n2 @ 1.140 ns exceeds limit 2.8%","objects":["net:n2"]}
+{"schema":"vyges-events/1.0","ts_ms":1795263329844,"tool":"vyges-em-ir","severity":"warn","code":"EMIR-DONE","raw_msg":"EM/IR VIOLATED — peak IR drop 2.83% (limit 2.8%), worst EM 0.00x, 1 violation(s)"}

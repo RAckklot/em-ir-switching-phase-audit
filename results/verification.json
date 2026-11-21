@@ -1,0 +1,96 @@
+{
+  "case_description": "Two-node coupled RC network, triangular 90 pJ events",
+  "units": "seconds represented as nanoseconds; peak droop reported in volts",
+  "parameters": {
+    "vdd_v": 1.8,
+    "r_pad_ohm": 1.0,
+    "r_coupling_ohm": 1.0,
+    "cap_pf_per_node": 1000.0,
+    "pulse_energy_pj": 90.0,
+    "pulse_duration_ns": 0.1,
+    "peak_current_a": 0.9999999999999998,
+    "illustrative_ir_limit_percent": 2.75
+  },
+  "cases": {
+    "simultaneous": {
+      "center_times_ns": [
+        1.0,
+        1.0
+      ],
+      "methods": {
+        "piecewise_ode": {
+          "peak_v": 0.047628043011874004,
+          "time_ns": 1.0475999999999948,
+          "node": 1,
+          "drop_percent": 2.646002389548556,
+          "within_illustrative_ir_limit": true
+        },
+        "greens_function_quadrature": {
+          "peak_v": 0.04762804647063111,
+          "time_ns": 1.0476185967524656,
+          "node": 1,
+          "drop_percent": 2.6460025817017283,
+          "within_illustrative_ir_limit": true
+        },
+        "backward_euler_0p01_ns": {
+          "peak_v": 0.04758270548561106,
+          "time_ns": 1.04,
+          "node": 1,
+          "drop_percent": 2.6434836380895033,
+          "within_illustrative_ir_limit": true
+        }
+      }
+    },
+    "staggered": {
+      "center_times_ns": [
+        1.0,
+        1.1
+      ],
+      "methods": {
+        "piecewise_ode": {
+          "peak_v": 0.05099182975796937,
+          "time_ns": 1.146799999999995,
+          "node": 2,
+          "drop_percent": 2.8328794309982985,
+          "within_illustrative_ir_limit": false
+        },
+        "greens_function_quadrature": {
+          "peak_v": 0.050991913184631324,
+          "time_ns": 1.1468912701013276,
+          "node": 2,
+          "drop_percent": 2.8328840658128516,
+          "within_illustrative_ir_limit": false
+        },
+        "backward_euler_0p01_ns": {
+          "peak_v": 0.05085767511973941,
+          "time_ns": 1.1400000000000001,
+          "node": 2,
+          "drop_percent": 2.8254263955410783,
+          "within_illustrative_ir_limit": false
+        }
+      }
+    }
+  },
+  "comparison": {
+    "piecewise_ode": {
+      "extra_droop_v": 0.0033637867460953666,
+      "increase_percent": 7.062618015308231,
+      "ranking": "staggered_deeper"
+    },
+    "greens_function_quadrature": {
+      "extra_droop_v": 0.003363866714000213,
+      "increase_percent": 7.062785403290639,
+      "ranking": "staggered_deeper"
+    },
+    "backward_euler_0p01_ns": {
+      "extra_droop_v": 0.0032749696341283496,
+      "increase_percent": 6.882688995308794,
+      "ranking": "staggered_deeper"
+    }
+  },
+  "validation_status": {
+    "native_upstream_binary_executed": false,
+    "independent_scipy_methods_executed": true,
+    "real_silicon_measurement": false
+  }
+}

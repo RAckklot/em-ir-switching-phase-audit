@@ -1,0 +1,23 @@
+{
+  "creators": [
+    {
+      "name": "RAckklot"
+    }
+  ],
+  "title": "When Simultaneous Switching Underestimates RC-Grid Droop: A Validated EM-IR Audit",
+  "description": "Validated and reproducible two-node RC counterexample to an unconditional simultaneous-switching upper-bound assertion in a pinned open-source EDA analyzer. Includes mathematical derivation, native Rust test evidence, ngspice comparisons, exact free-phase optimum and a proposed upstream documentation/regression patch. This is not a new general sign-off algorithm or a claim of silicon failure. AI-assisted analysis and code are disclosed in the report.",
+  "version": "1.0.0",
+  "access_right": "open",
+  "license": "mit",
+  "upload_type": "software",
+  "language": "eng",
+  "keywords": [
+    "electronic design automation",
+    "power integrity",
+    "transient IR drop",
+    "RC networks",
+    "numerical verification",
+    "reproducible research",
+    "ngspice"
+  ]
+}

@@ -1,0 +1,42 @@
+--- a/README.md
++++ b/README.md
+@@ -223,8 +223,12 @@
+ coincident switches superpose; decap monotonically removes droop). Those tests are
+ mutation-checked. Three limits matter more than the accuracy:
+ 
+-- **Every instance switches at one global `switch_t_ns`**, so the result is
+-  worst-case-simultaneous switching — a strict upper bound, not a waveform.
++- **Every automatically generated instance event uses one global `switch_t_ns`**.
++  This is a simultaneous-switching stress scenario, not a guaranteed upper bound
++  over event timings. In a coupled RC grid, staggered events can align delayed
++  voltage responses and cause deeper droop. Explicit `.pdn` `switch` records
++  already accept separate event centers; the solver evaluates the supplied
++  scenario rather than optimizing those centers.
+ - **The timestep is implicit** (`min(switch duration)/10`) and cannot be set, so
+   accuracy cannot be traded for runtime and convergence cannot be demonstrated.
+ - **Only the worst droop is reported**; no waveform is exposed.
+--- /dev/null
++++ b/tests/switching_phase_regression.rs
+@@ -0,0 +1,22 @@
++// Synthetic coupled-RC regression: simultaneous current peaks do not bound droop.
++use vyges_em_ir::{emir::analyze, pdn::PdnSpec};
++
++#[test]
++fn staggered_switches_can_exceed_simultaneous_droop() {
++    let peak = |second_center: f64| {
++        let input = format!(
++            "vdd 1.8\npad p\nres p n1 1.0 met1\nres p n2 1.0 met1\n\
++             res n1 n2 1.0 met1\ncap n1 1000\ncap n2 1000\n\
++             switch n1 90.0 1.0 0.1\nswitch n2 90.0 {second_center} 0.1\n"
++        );
++        analyze(&PdnSpec::parse(&input).unwrap())
++            .unwrap().dynamic.unwrap().drop
++    };
++    let aligned = peak(1.0);
++    let staggered = peak(1.1);
++    assert!((aligned - 0.04758270548561106).abs() < 1e-6);
++    assert!((staggered - 0.05085767511973941).abs() < 1e-6);
++    assert!(staggered > aligned * 1.06);
++    // Illustrative model threshold; this is not a foundry sign-off limit.
++    assert!(aligned < 0.0495 && staggered > 0.0495);
++}

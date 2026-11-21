@@ -1,0 +1,1 @@
+{"design":"staggered","vdd":1.800000,"nodes":2,"worst_ir":{"node":"n2","voltage":1.800000,"drop":0.000000,"drop_pct":0.0000},"dynamic":{"node":"n2","voltage":1.749142,"drop":0.050858,"drop_pct":2.8254,"time_ns":1.1400},"ir_met":false,"em_checked":0,"em_worst_ratio":0.0000,"pi_met":false,"em_violations":[]}

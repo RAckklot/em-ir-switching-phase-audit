@@ -1,0 +1,13 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "pytest": "9.2.0",
+  "reportlab": "4.4.9",
+  "rustc": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+  "cargo": "cargo 1.100.0 (3acc79c0c 2026-11-05)",
+  "ngspice_package": "ngspice_44.2+ds-1_amd64.deb",
+  "ngspice_package_sha256": "4d76721dd91416055b1088cfc58626d4db47b91afda7c73258c0968ba6e4d24e"
+}

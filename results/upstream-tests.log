@@ -1,0 +1,150 @@
+   Compiling proc-macro2 v1.0.106
+   Compiling shlex v2.0.1
+   Compiling memchr v2.8.3
+   Compiling find-msvc-tools v0.1.15
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.46
+   Compiling libc v0.2.191
+   Compiling serde_core v1.0.228
+   Compiling zmij v1.0.21
+   Compiling regex-syntax v0.8.11
+   Compiling cc v1.11.2
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.150
+   Compiling adler2 v2.0.1
+   Compiling itoa v1.0.18
+   Compiling vyges-loom v0.1.56 (https://github.com/vyges-tools/loom?branch=main#743d6adf)
+   Compiling miniz_oxide v0.8.9
+   Compiling vyges-em-ir v0.1.56 (/workspace/scratch/33d137e121e0/emir-upstream)
+   Compiling aho-corasick v1.1.5
+   Compiling syn v2.0.118
+   Compiling libmimalloc-sys v0.1.44
+   Compiling regex-automata v0.4.18
+   Compiling serde_derive v1.0.228
+   Compiling mimalloc v0.1.48
+   Compiling regex v1.13.1
+   Compiling vyges-events v0.1.56 (https://github.com/vyges-tools/events?branch=main#fbeaba52)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 21.89s
+     Running unittests src/lib.rs (target/debug/build/vyges-em-ir/65e52027816a1ba5/out/vyges_em_ir-65e52027816a1ba5)
+
+running 3 tests
+test emsignoff::tests::flags_overcurrent_segment ... ok
+test emsignoff::tests::clean_when_under_limit ... ok
+test emsignoff::tests::no_current_is_checked_but_not_violated ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/build/vyges-em-ir/89bbdd11458fcd64/out/vyges_em_ir-89bbdd11458fcd64)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/analog.rs (target/debug/build/vyges-em-ir/77851abff529142f/out/analog-77851abff529142f)
+
+running 1 test
+test analog_bias_grid_ir_and_em ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/current_map.rs (target/debug/build/vyges-em-ir/d4121432a32ec66f/out/current_map-d4121432a32ec66f)
+
+running 3 tests
+test current_map_lands_per_instance_current_verbatim ... ok
+test measured_map_lower_than_worstcase_map ... ok
+test current_map_overrides_activity ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/decap.rs (target/debug/build/vyges-em-ir/5937e203a63e5521/out/decap-5937e203a63e5521)
+
+running 2 tests
+test no_decap_map_means_no_caps ... ok
+test decap_cell_lands_capacitance_at_its_own_tap_on_the_rail ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/em.rs (target/debug/build/vyges-em-ir/6ef05c03771b730a/out/em-6ef05c03771b730a)
+
+running 4 tests
+test lef_dc_current_density_parsed ... ok
+test per_segment_em_violation_flagged ... ok
+test extract_sets_width_based_em_limit ... ok
+test rms_em_from_transient_flags_over_limit ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/emir.rs (target/debug/build/vyges-em-ir/a1a6136d02910542/out/emir-a1a6136d02910542)
+
+running 2 tests
+test clean_pdn_passes ... ok
+test ir_drop_and_em_violation ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/engine.rs (target/debug/build/vyges-em-ir/a5466ab8de0e81b4/out/engine-a5466ab8de0e81b4)
+
+running 2 tests
+test pi_met_covers_em_not_just_ir ... ok
+test example_block_analyzes_clean ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/extract.rs (target/debug/build/vyges-em-ir/196929530cb42618/out/extract-196929530cb42618)
+
+running 13 tests
+test lef_layer_resistance ... ok
+test parses_components_placements ... ok
+test parses_def_units_and_power_net ... ok
+test a_via_with_no_definition_falls_back_rather_than_vanishing ... ok
+test extracts_network_with_correct_resistances ... ok
+test a_cell_taps_its_rail_at_its_centre_when_the_footprint_is_known ... ok
+test a_restricted_source_set_reports_more_ir_drop_than_the_whole_layer ... ok
+test solves_ir_on_extracted_grid ... ok
+test sources_fall_back_to_the_pad_layer_when_no_power_pin_is_declared ... ok
+test a_via_is_priced_by_its_cut_layer_and_cut_count ... ok
+test splits_stripe_at_mid_segment_via_and_bridges ... ok
+test sources_are_the_power_pin_shapes_when_the_design_declares_them ... ok
+test without_a_cell_lef_the_tap_falls_back_to_the_origin ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/pdn.rs (target/debug/build/vyges-em-ir/e3f4153a5c22f9e2/out/pdn-e3f4153a5c22f9e2)
+
+running 2 tests
+test parses_network ... ok
+test rejects_missing_essentials ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/solver.rs (target/debug/build/vyges-em-ir/9e472436da5c0748/out/solver-9e472436da5c0748)
+
+running 5 tests
+test single_resistor_drop ... ok
+test series_chain ... ok
+test singular_floating_node ... ok
+test the_solution_actually_satisfies_the_system ... ok
+test a_real_sized_mesh_converges_within_a_modest_iteration_cap ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
+     Running tests/transient.rs (target/debug/build/vyges-em-ir/82207e8a6523f5d7/out/transient-82207e8a6523f5d7)
+
+running 8 tests
+test no_switches_means_static_only ... ok
+test parses_cap_and_switch ... ok
+test coincident_switches_superpose ... ok
+test dynamic_droop_present_and_exceeds_static ... ok
+test with_no_decap_the_peak_droop_is_exactly_ipk_times_r ... ok
+test decap_reduces_droop ... ok
+test droop_scales_linearly_with_switch_energy ... ok
+test decap_monotonically_removes_droop ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests vyges_em_ir
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

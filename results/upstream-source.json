@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/vyges-tools/em-ir",
+  "commit": "9ad03f02054ab3c3ec87bc69a684dff2aaf7a8a9",
+  "package": "vyges-em-ir 0.1.56",
+  "git_dependencies": {
+    "vyges-events": "fbeaba52516c5a210cf37648edd1327f28596420",
+    "vyges-loom": "743d6adf0af62b080b897587be286e28bcc7de6a"
+  },
+  "source_anchors": {
+    "README.md": "lines 226\u2013227: simultaneous upper-bound wording",
+    "src/extract.rs": "lines 487\u2013495: global event center",
+    "src/emir.rs": "lines 351\u2013459: transient integration"
+  },
+  "upstream_patch_submitted": false
+}

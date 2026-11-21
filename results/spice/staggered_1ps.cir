@@ -1,0 +1,23 @@
+Two-node RC phase audit
+VDD p 0 1.8
+R1 p n1 1
+R2 p n2 1
+R12 n1 n2 1
+C1 n1 0 1n
+C2 n2 0 1n
+I1 n1 0 PWL(0 0 9.5e-10 0 1e-09 1 1.05e-09 0 3n 0)
+I2 n2 0 PWL(0 0 1.05e-09 0 1.1e-09 1 1.15e-09 0 3n 0)
+.options reltol=1e-10 abstol=1e-14 vntol=1e-12 method=trap
+.option measdgt=12
+.tran 1e-12 3n 0 1e-12
+.measure tran vmin1 MIN v(n1)
+.measure tran vmin2 MIN v(n2)
+.control
+set numdgt=15
+set measdgt=15
+run
+set wr_singlescale
+wrdata /workspace/scratch/33d137e121e0/emir-r1/results/spice/staggered_1ps.dat v(n1) v(n2)
+quit
+.endc
+.end

@@ -1,0 +1,207 @@
+{
+  "analytic_extrema": {
+    "self_peak_lag_ns": 0.04554811282454383,
+    "cross_peak_lag_ns": 0.550139304118944,
+    "optimal_delay_ns": 0.5045911912944001,
+    "self_peak_v": 0.04554096376754091,
+    "cross_peak_v": 0.009616493927384458,
+    "free_phase_global_peak_v": 0.05515745769492537
+  },
+  "cases": {
+    "simultaneous": {
+      "centers_ns": [
+        1.0,
+        1.0
+      ],
+      "closed_form": {
+        "peak_v": 0.04762804647063107,
+        "time_ns": 1.04761860134088
+      },
+      "ode": {
+        "peak_v": 0.047628043011874004,
+        "time_ns": 1.0475999999999948,
+        "node": 1
+      },
+      "quadrature": {
+        "peak_v": 0.04762804647063111,
+        "time_ns": 1.0476185967524656,
+        "node": 1
+      },
+      "backward_euler": {
+        "peak_v": 0.04758270548561106,
+        "time_ns": 1.04,
+        "node": 1
+      },
+      "spice": {
+        "1ps": {
+          "peak_v": 0.04762559222938911,
+          "node_min_voltages": [
+            1.752374407770611,
+            1.752374407770618
+          ],
+          "exit_code": 0
+        },
+        "0p2ps": {
+          "peak_v": 0.04762804249479413,
+          "node_min_voltages": [
+            1.752371957505319,
+            1.752371957505206
+          ],
+          "exit_code": 0
+        }
+      },
+      "native": {
+        "exit_code": 0,
+        "dynamic": {
+          "node": "n1",
+          "voltage": 1.752417,
+          "drop": 0.047583,
+          "drop_pct": 2.6435,
+          "time_ns": 1.04
+        },
+        "ir_met": true,
+        "command": [
+          "/workspace/scratch/33d137e121e0/emir-upstream/target/release/vyges-em-ir",
+          "run",
+          "/workspace/scratch/33d137e121e0/emir-r1/examples/simultaneous.emir",
+          "--json"
+        ]
+      }
+    },
+    "staggered": {
+      "centers_ns": [
+        1.0,
+        1.1
+      ],
+      "closed_form": {
+        "peak_v": 0.0509919131846311,
+        "time_ns": 1.1468912677605083
+      },
+      "ode": {
+        "peak_v": 0.05099182975796937,
+        "time_ns": 1.146799999999995,
+        "node": 2
+      },
+      "quadrature": {
+        "peak_v": 0.050991913184631324,
+        "time_ns": 1.1468912701013276,
+        "node": 2
+      },
+      "backward_euler": {
+        "peak_v": 0.05085767511973941,
+        "time_ns": 1.1400000000000001,
+        "node": 2
+      },
+      "spice": {
+        "1ps": {
+          "peak_v": 0.050990126440743966,
+          "node_min_voltages": [
+            1.754460000900396,
+            1.749009873559256
+          ],
+          "exit_code": 0
+        },
+        "0p2ps": {
+          "peak_v": 0.050991811140770116,
+          "node_min_voltages": [
+            1.754459057006224,
+            1.74900818885923
+          ],
+          "exit_code": 0
+        }
+      },
+      "native": {
+        "exit_code": 0,
+        "dynamic": {
+          "node": "n2",
+          "voltage": 1.749142,
+          "drop": 0.050858,
+          "drop_pct": 2.8254,
+          "time_ns": 1.14
+        },
+        "ir_met": false,
+        "command": [
+          "/workspace/scratch/33d137e121e0/emir-upstream/target/release/vyges-em-ir",
+          "run",
+          "/workspace/scratch/33d137e121e0/emir-r1/examples/staggered.emir",
+          "--json"
+        ]
+      }
+    },
+    "optimal": {
+      "centers_ns": [
+        1.0,
+        1.5045911912944
+      ],
+      "closed_form": {
+        "peak_v": 0.05515745769492418,
+        "time_ns": 1.5501392932308442
+      },
+      "ode": {
+        "peak_v": 0.055157430790031145,
+        "time_ns": 1.550191191294395,
+        "node": 2
+      },
+      "quadrature": {
+        "peak_v": 0.055157457694924986,
+        "time_ns": 1.5501392987423344,
+        "node": 2
+      },
+      "backward_euler": {
+        "peak_v": 0.05446512916318859,
+        "time_ns": 1.55,
+        "node": 2
+      },
+      "spice": {
+        "1ps": {
+          "peak_v": 0.05515669901539799,
+          "node_min_voltages": [
+            1.754460000900396,
+            1.744843300984602
+          ],
+          "exit_code": 0
+        },
+        "0p2ps": {
+          "peak_v": 0.05515743670904594,
+          "node_min_voltages": [
+            1.754459057006224,
+            1.744842563290954
+          ],
+          "exit_code": 0
+        }
+      },
+      "native": {
+        "exit_code": 0,
+        "dynamic": {
+          "node": "n2",
+          "voltage": 1.745535,
+          "drop": 0.054465,
+          "drop_pct": 3.0258,
+          "time_ns": 1.55
+        },
+        "ir_met": false,
+        "command": [
+          "/workspace/scratch/33d137e121e0/emir-upstream/target/release/vyges-em-ir",
+          "run",
+          "/workspace/scratch/33d137e121e0/emir-r1/examples/optimal.emir",
+          "--json"
+        ]
+      }
+    }
+  },
+  "versions": {
+    "python": "3.12.14"
+  },
+  "limitations": [
+    "synthetic lumped RC grid",
+    "no measured silicon",
+    "independent unconstrained event phases",
+    "no new algorithm claimed"
+  ],
+  "optimal_increase_percent": 15.808776093592591,
+  "spice_version": "******\n** ngspice-44.2 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2024, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html\n** Creation Date: Sun Jan 12 08:19:15 UTC 2025\n******\n",
+  "upstream_commit": "9ad03f02054ab3c3ec87bc69a684dff2aaf7a8a9",
+  "upstream_tracked_diff": "",
+  "cargo_lock_sha256": "3772fe477ac91eaeb4df7991eb450ba39a1e362fb75de7c44abad575edc95873",
+  "native_binary_sha256": "881ef174422d38db6bd7559ef775a28572dfd349a902b9edf6d922cc582d46c3"
+}

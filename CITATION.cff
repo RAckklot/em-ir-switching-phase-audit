@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If using this reproduction, please cite the archived version once a Zenodo DOI is available."
+type: software
+title: "When Simultaneous Switching Underestimates RC-Grid Droop: A Validated EM-IR Audit"
+abstract: >-
+  Reproducible numerical and native-tool counterexample to a source-specific
+  strict-upper-bound assertion about simultaneous switching in an open-source
+  power-distribution-network analyzer. Includes analytic derivation, ngspice
+  comparison, synthetic fixtures and a documentation/regression patch.
+  No new general verification algorithm or silicon failure is claimed.
+authors:
+  - family-names: "RAckklot"
+date-released: 2026-11-21
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/RAckklot/em-ir-switching-phase-audit"
+keywords:
+  - electronic design automation
+  - dynamic IR drop
+  - power integrity
+  - reproducibility
+  - numerical verification
+  - ngspice
+identifiers: []

@@ -1,0 +1,9 @@
+vdd 1.8
+pad p
+res p n1 1.0 met1
+res p n2 1.0 met1
+res n1 n2 1.0 met1
+cap n1 1000
+cap n2 1000
+switch n1 90.0 1 0.1
+switch n2 90.0 1.5045911912944 0.1

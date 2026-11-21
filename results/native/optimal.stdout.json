@@ -1,0 +1,1 @@
+{"design":"optimal","vdd":1.800000,"nodes":2,"worst_ir":{"node":"n2","voltage":1.800000,"drop":0.000000,"drop_pct":0.0000},"dynamic":{"node":"n2","voltage":1.745535,"drop":0.054465,"drop_pct":3.0258,"time_ns":1.5500},"ir_met":false,"em_checked":0,"em_worst_ratio":0.0000,"pi_met":false,"em_violations":[]}

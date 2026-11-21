@@ -1,0 +1,1 @@
+{"design":"simultaneous","vdd":1.800000,"nodes":2,"worst_ir":{"node":"n1","voltage":1.800000,"drop":0.000000,"drop_pct":0.0000},"dynamic":{"node":"n1","voltage":1.752417,"drop":0.047583,"drop_pct":2.6435,"time_ns":1.0400},"ir_met":true,"em_checked":0,"em_worst_ratio":0.0000,"pi_met":true,"em_violations":[]}
