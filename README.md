@@ -1,6 +1,6 @@
 # When simultaneous switching underestimates RC-grid droop
 
-**Validated R1 technical audit · 21 November 2026 · published v1.0.0**
+**Validated R1 technical audit · 21 November 2026 · latest release v1.0.1**
 
 This bounded study refutes a universal simultaneous-switching upper-bound claim in the pinned Vyges em-ir README. It does **not** claim a new general verification algorithm or a demonstrated silicon defect.
 
@@ -54,9 +54,9 @@ Original reproduction code retains its MIT license. Upstream material is identif
 
 ## Publication and citation
 
-**The GitHub repository is public and [v1.0.0 was released on 21 November 2026](https://github.com/RAckklot/em-ir-switching-phase-audit/releases/tag/v1.0.0).** It includes a [citation file](CITATION.cff), [Zenodo metadata](.zenodo.json), [release notes](RELEASE_NOTES.md), and a [publication checklist](docs/PUBLISH_CHECKLIST.md). **No Zenodo DOI has been verified or linked here, and no upstream issue or patch has been accepted.**
+**The GitHub repository is public; [v1.0.1 is the latest archival release](https://github.com/RAckklot/em-ir-switching-phase-audit/releases/tag/v1.0.1), following [v1.0.0](https://github.com/RAckklot/em-ir-switching-phase-audit/releases/tag/v1.0.0), both published on 21 November 2026.** The v1.0.1 publication makes no new scientific claims. It includes a [citation file](CITATION.cff), [Zenodo metadata](.zenodo.json), [release notes](RELEASE_NOTES.md), and a [publication checklist](docs/PUBLISH_CHECKLIST.md). **No Zenodo DOI has been verified or linked here, and no upstream issue or patch has been accepted.**
 
-**Zenodo archival:** check [Zenodo's GitHub integration](https://zenodo.org/account/settings/github/) for this repository and for a DOI associated with `v1.0.0`. If a DOI already exists, verify its record and add the exact DOI link here. If the Zenodo integration was enabled only *after* the `v1.0.0` release, it will not archive that earlier release automatically; enable the repository and create a new release (for example `v1.0.1`) to trigger archiving. Do not rerun the existing `v1.0.0` release script.
+**Zenodo archival:** check [Zenodo's GitHub integration](https://zenodo.org/account/settings/github/) for a record and DOI corresponding to the newly published `v1.0.1` release. No DOI has been independently verified; do not add a DOI badge until an actual Zenodo record is confirmed. Zenodo does not retroactively archive releases published before the repository integration was enabled.
 
 For the upstream correction, use the paste-ready [issue draft](docs/UPSTREAM_ISSUE_DRAFT.md) and [tested patch](docs/upstream-documentation-and-regression.patch).
 
