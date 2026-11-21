@@ -1,6 +1,6 @@
 # When simultaneous switching underestimates RC-grid droop
 
-**Validated R1 technical audit · 21 November 2026 · v1.0.0 release candidate**
+**Validated R1 technical audit · 21 November 2026 · published v1.0.0**
 
 This bounded study refutes a universal simultaneous-switching upper-bound claim in the pinned Vyges em-ir README. It does **not** claim a new general verification algorithm or a demonstrated silicon defect.
 
@@ -18,7 +18,7 @@ The unrestricted-phase optimum is **15.8088%** above simultaneous switching in t
 - 45 pinned upstream tests passed.
 - Native executable and ngspice 44.2 executed successfully; raw outputs are included.
 - The proposed Rust regression passed (1 test); its patch applies cleanly.
-- No patch, issue, paper, or repository was published by this work.
+- The source repository and [GitHub v1.0.0 release](https://github.com/RAckklot/em-ir-switching-phase-audit/releases/tag/v1.0.0) are public. The proposed upstream patch/issue has not been submitted or accepted; no peer-reviewed paper or Zenodo DOI is claimed.
 
 Read **EM_IR_Validated_Report.pdf** or [the source report](docs/TECHNICAL_REPORT.md). Follow [reproduction instructions](docs/REPRODUCE_NATIVE.md).
 
@@ -54,9 +54,9 @@ Original reproduction code retains its MIT license. Upstream material is identif
 
 ## Publication and citation
 
-This repository is prepared for public release. It includes a [citation file](CITATION.cff), [Zenodo metadata](.zenodo.json), [release notes](RELEASE_NOTES.md), and a [publication checklist](docs/PUBLISH_CHECKLIST.md). **No GitHub release, upstream issue, DOI, or acceptance is implied until explicitly linked here.**
+**The GitHub repository is public and [v1.0.0 was released on 21 November 2026](https://github.com/RAckklot/em-ir-switching-phase-audit/releases/tag/v1.0.0).** It includes a [citation file](CITATION.cff), [Zenodo metadata](.zenodo.json), [release notes](RELEASE_NOTES.md), and a [publication checklist](docs/PUBLISH_CHECKLIST.md). **No Zenodo DOI has been verified or linked here, and no upstream issue or patch has been accepted.**
 
-To create the public repository using your own authenticated GitHub CLI, run `bash scripts/publish_github.sh`. To mint a DOI, first connect and enable the repository in Zenodo, then run `bash scripts/create_release.sh --zenodo-enabled`.
+**Zenodo archival:** check [Zenodo's GitHub integration](https://zenodo.org/account/settings/github/) for this repository and for a DOI associated with `v1.0.0`. If a DOI already exists, verify its record and add the exact DOI link here. If the Zenodo integration was enabled only *after* the `v1.0.0` release, it will not archive that earlier release automatically; enable the repository and create a new release (for example `v1.0.1`) to trigger archiving. Do not rerun the existing `v1.0.0` release script.
 
 For the upstream correction, use the paste-ready [issue draft](docs/UPSTREAM_ISSUE_DRAFT.md) and [tested patch](docs/upstream-documentation-and-regression.patch).
 
