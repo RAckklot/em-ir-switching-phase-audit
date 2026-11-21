@@ -1,0 +1,54 @@
+name: Publish EM-IR v1.0.1 archival release
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v1.0.1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the validated R1 archival release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view v1.0.1 >/dev/null 2>&1; then
+            echo "v1.0.1 already published"
+            exit 0
+          fi
+          test -f EM_IR_Validated_Report.pdf
+          cat > "${RUNNER_TEMP}/v1.0.1-notes.md" <<'NOTES'
+          # When Simultaneous Switching Underestimates RC-Grid Droop
+
+          Archival v1.0.1 release of the validated R1 EM-IR switching-phase audit. This release republishes the verified v1.0.0 study for discoverability and Zenodo archival; **there are no new scientific findings**.
+
+          ## Validated numerical findings (synthetic two-node passive RC model)
+          | Event-center separation | Closed-form peak droop | Native Vyges em-ir peak droop | ngspice 44.2 peak droop |
+          | --- | ---: | ---: | ---: |
+          | 0 ns (simultaneous) | 47.628046 mV | 47.583 mV | 47.628042 mV |
+          | 0.1 ns | 50.991913 mV | 50.858 mV | 50.991811 mV |
+          | 0.504591191 ns (free-phase optimum) | 55.157458 mV | 54.465 mV | 55.157437 mV |
+
+          Peak continuous-time droop is **15.8088% greater** at the unrestricted optimum than with aligned switching in this example. The report documents 17 passing Python checks, 45 upstream Rust tests, one proposed Rust regression and independent circuit simulation.
+
+          ## Scope and limitations
+          This is an open-source EDA **modeling-assumption audit**, not an original general verification algorithm, physical-chip sign-off failure, or peer-reviewed research paper. The illustrative IR threshold is not an industrial requirement. The upstream patch is proposed and not claimed as accepted. Prior art and AI-assistance disclosures appear in the attached seven-page report.
+
+          **Documentation and reproducibility:** see `EM_IR_Validated_Report.pdf`, `docs/TECHNICAL_REPORT.md`, and `docs/REPRODUCE_NATIVE.md` in this repository.
+
+          **License:** MIT for original code; upstream materials retain their own licenses.
+          NOTES
+          gh release create v1.0.1 EM_IR_Validated_Report.pdf \
+            --title "v1.0.1 — Validated EM-IR Switching-Phase Audit" \
+            --notes-file "${RUNNER_TEMP}/v1.0.1-notes.md" \
+            --target "${GITHUB_SHA}" \
+            --latest
+          gh release view v1.0.1
