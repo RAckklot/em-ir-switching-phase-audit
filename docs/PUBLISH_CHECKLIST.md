@@ -9,15 +9,18 @@
 - [x] Include Zenodo metadata, citation metadata, release notes and GitHub publishing scripts.
 - [x] Keep limitations and AI-assistance disclosure visible.
 
-## Account owner steps — not performed in ChatGPT
+## Publication status (verified 21 November 2026)
 
-- [ ] Review the PDF, scientific claims, publication credit (`RAckklot`), and license.
-- [ ] Create a **public** repository with `bash scripts/publish_github.sh` (requires `gh auth login` once).
-- [ ] Open a narrowly scoped [issue in vyges-tools/em-ir](https://github.com/vyges-tools/em-ir/issues/new) using `docs/UPSTREAM_ISSUE_DRAFT.md`; a connected-app attempt was refused with a GitHub 403 permission error.
-- [ ] Link GitHub to [Zenodo](https://zenodo.org/), sync repositories and enable **this** repository **before** creating a GitHub release.
-- [ ] Run `bash scripts/create_release.sh --zenodo-enabled` to make `v1.0.0` after verifying the integration toggle.
-- [ ] Check the DOI assigned by Zenodo; insert the DOI badge in README *only after it exists*.
-- [ ] Share `docs/LINKEDIN_POST.md` with the real repository and DOI links.
+- [x] Public repository: https://github.com/RAckklot/em-ir-switching-phase-audit
+- [x] GitHub release `v1.0.0`: https://github.com/RAckklot/em-ir-switching-phase-audit/releases/tag/v1.0.0
+- [x] README updated to reflect the public release.
+- [ ] Account owner: review scientific claims, attribution/AI-assistance disclosure, license and report before promotion.
+- [ ] Check the [Zenodo GitHub integration](https://zenodo.org/account/settings/github/): sync and enable this repository if it is not already enabled.
+- [ ] Verify whether a Zenodo record and DOI exist for `v1.0.0`; no DOI has been independently verified or linked.
+- [ ] If `v1.0.0` was published before Zenodo integration was enabled, create a **new** GitHub release (e.g. `v1.0.1`) after enabling the repository to trigger Zenodo archiving. Do **not** rerun `scripts/create_release.sh`, which attempts to create the already-existing `v1.0.0` tag.
+- [ ] Add the exact verified DOI to the README and citation metadata once Zenodo confirms its record.
+- [ ] Submit the narrowly scoped [upstream issue](https://github.com/vyges-tools/em-ir/issues/new) using `docs/UPSTREAM_ISSUE_DRAFT.md`; an earlier connected-app attempt returned HTTP 403, so no upstream post is claimed.
+- [ ] Share `docs/LINKEDIN_POST.md` using the actual repository and, if minted, DOI links.
 
 ## Publication integrity
 
